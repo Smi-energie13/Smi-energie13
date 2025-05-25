@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact – SMI Énergie 13</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function afficherConfirmation() {
+      const form = document.getElementById("contact-form");
+      const confirmation = document.getElementById("confirmation");
+      form.style.display = "none";
+      confirmation.style.display = "block";
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -19,7 +27,7 @@
 
   <main>
     <section class="formulaire">
-      <form action="https://formspree.io/f/mkgrlbrw" method="POST">
+      <form id="contact-form" action="https://formspree.io/f/mkgrlbrw" method="POST" onsubmit="afficherConfirmation(); return true;">
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" required>
 
@@ -31,6 +39,14 @@
 
         <button type="submit">Envoyer</button>
       </form>
+
+      <div id="confirmation" style="display: none; text-align: center; padding: 20px;">
+        <h2>Merci pour votre message !</h2>
+        <p>Nous vous répondrons rapidement.</p>
+        <a href="index.html">
+          <button style="margin-top: 20px;">Retour à l'accueil</button>
+        </a>
+      </div>
     </section>
   </main>
 

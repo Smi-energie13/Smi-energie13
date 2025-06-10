@@ -6,75 +6,102 @@
   <title>Climatisation – SMI Énergie 13</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; }
-    header, footer {
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
       background-color: #003344;
       color: white;
-      text-align: center;
       padding: 20px;
+      text-align: center;
+      position: relative;
     }
-    main { padding: 20px; background: #f9f9f9; }
-    h2 { color: #003344; }
-    a { color: #003344; text-decoration: none; }
 
-    /* Menu */
-    #menu-toggle {
+    .menu-btn {
+      font-size: 20px;
       background-color: #003344;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 10px 15px;
       cursor: pointer;
-      font-size: 16px;
-      margin: 10px;
     }
 
-    #side-menu {
+    .menu-container {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
       background-color: #003344;
-      padding: 10px;
-      margin: 10px;
-      border-radius: 5px;
-      display: none;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
     }
 
-    #side-menu a {
-      display: block;
-      color: white;
+    .sidebar a {
+      padding: 12px 24px;
       text-decoration: none;
-      margin: 5px 0;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.2s;
+    }
+
+    .sidebar a:hover {
+      background-color: #005566;
+    }
+
+    main {
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    footer {
+      background-color: #003344;
+      color: white;
+      text-align: center;
+      padding: 10px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Climatisation</h1>
-    <p>Des solutions efficaces pour un confort optimal</p>
-  </header>
 
-  <button id="menu-toggle">☰ Menu</button>
-  <nav id="side-menu">
+  <div id="mySidebar" class="sidebar">
     <a href="index.html">Accueil</a>
     <a href="climatisation.html">Climatisation</a>
     <a href="chauffage.html">Chauffage</a>
     <a href="isolation.html">Isolation</a>
     <a href="contact.html">Contact</a>
-  </nav>
+  </div>
 
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('side-menu');
-    toggle.onclick = () => {
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    };
-  </script>
+  <header>
+    <div class="menu-container">
+      <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    </div>
+    <h1>Climatisation</h1>
+    <p>Des systèmes performants pour un confort optimal</p>
+  </header>
 
   <main>
     <section>
-      <h2>Nos prestations en climatisation</h2>
-      <p>Nous installons des systèmes de climatisation performants, adaptés à vos besoins résidentiels ou professionnels, avec un suivi personnalisé.</p>
+      <h2>Nos solutions de climatisation</h2>
+      <p>
+        SMI Énergie 13 vous propose l’installation de climatisations réversibles pour assurer un confort thermique toute l’année. Nos équipements sont économes en énergie et adaptés à tous types de bâtiments.
+      </p>
       <ul>
         <li>Étude thermique personnalisée</li>
-        <li>Installation de clim réversible</li>
-        <li>Maintenance et dépannage</li>
+        <li>Pose de climatisation split et multi-split</li>
+        <li>Entretien et dépannage</li>
       </ul>
     </section>
   </main>
@@ -82,5 +109,21 @@
   <footer>
     &copy; 2025 SMI Énergie 13
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.style.width = (sidebar.style.width === "250px") ? "0" : "250px";
+    }
+
+    document.addEventListener("click", function(event) {
+      const sidebar = document.getElementById("mySidebar");
+      const menuBtn = document.querySelector(".menu-btn");
+      if (!sidebar.contains(event.target) && !menuBtn.contains(event.target)) {
+        sidebar.style.width = "0";
+      }
+    });
+  </script>
+
 </body>
 </html>

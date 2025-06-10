@@ -1,64 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SMI Énergie 13 – Accueil</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     /* Base */
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
-      color: #2e2e2e;
-      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f0f4c3);
+      color: #333;
       overflow-x: hidden;
     }
 
     header {
-      background: linear-gradient(135deg, #004d40, #00695c);
+      background: linear-gradient(135deg, #003344, #005566);
       color: white;
-      padding: 60px 20px 40px;
+      padding: 40px 20px;
       text-align: center;
       position: relative;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     h1 {
-      margin: 0;
-      font-size: 2.8em;
-      font-weight: 700;
+      margin-bottom: 5px;
+      font-size: 2.5em;
       animation: fadeInDown 1s ease;
     }
 
     header p {
-      font-size: 1.2em;
-      opacity: 0.9;
-      animation: fadeInDown 1.3s ease;
+      font-size: 1.1em;
+      opacity: 0.8;
+      animation: fadeInDown 1.5s ease;
     }
 
     /* Menu bouton */
     .menu-container {
       position: absolute;
-      left: 15px;
-      top: 15px;
+      left: 10px;
+      top: 10px;
     }
 
     .menu-btn {
-      font-size: 18px;
+      font-size: 20px;
       background: transparent;
       border: 2px solid white;
       color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
+      padding: 10px 15px;
       cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
 
     .menu-btn:hover {
       background: rgba(255, 255, 255, 0.1);
-      transform: scale(1.05);
     }
 
     /* Menu latéral */
@@ -66,51 +62,44 @@
       height: 100%;
       width: 0;
       position: fixed;
-      z-index: 5;
+      z-index: 2;
       top: 0;
       left: 0;
-      background: #004d40;
+      background-color: #003344;
       overflow-x: hidden;
-      transition: 0.4s;
+      transition: 0.3s;
       padding-top: 60px;
     }
 
     .sidebar a {
-      display: block;
-      color: white;
-      padding: 16px 32px;
+      padding: 15px 30px;
       text-decoration: none;
       font-size: 18px;
+      color: white;
+      display: block;
       transition: background 0.3s;
     }
 
     .sidebar a:hover {
-      background: #00695c;
+      background-color: #005566;
     }
 
     main {
-      padding: 50px 20px;
-      animation: fadeIn 1.2s ease-in;
+      padding: 40px 20px;
+      animation: fadeIn 1s ease-in;
     }
 
     section {
+      margin-bottom: 40px;
+      padding: 20px;
       background: white;
-      margin: 40px auto;
-      max-width: 800px;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
 
     section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 30px rgba(0,150,136,0.2);
-    }
-
-    section h2 {
-      color: #00695c;
-      font-weight: 600;
+      transform: scale(1.01);
     }
 
     .services ul {
@@ -119,30 +108,28 @@
     }
 
     #adresse img {
-      max-width: 100%;
+      max-width: 90%;
       height: auto;
-      margin-top: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      border-radius: 8px;
       transition: transform 0.3s ease;
     }
 
     #adresse img:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     footer {
-      background: #004d40;
+      background: #003344;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       font-size: 0.9em;
-      margin-top: 40px;
     }
 
-    /* Animation */
+    /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -151,30 +138,11 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Bouton retour haut */
-    #backTop {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #00695c;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 50px;
-      font-size: 16px;
-      cursor: pointer;
-      display: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    #backTop:hover {
-      background: #004d40;
-    }
-
     /* Responsive */
     @media (max-width: 600px) {
-      h1 { font-size: 2em; }
-      section { margin: 20px; }
+      h1 {
+        font-size: 1.8em;
+      }
     }
   </style>
 </head>
@@ -214,18 +182,16 @@
         <li>Maintenance de systèmes photovoltaïques</li>
       </ul>
     </section>
-
-    <section id="adresse" style="text-align: center;">
-      <h2>Adresse SMI Froid & Climatisation</h2>
-      <img src="adresse-smi.PNG" alt="Carte SMI Énergie 13 à Pélissanne" />
-    </section>
   </main>
 
-  <footer>
-    &copy; 2025 SMI Énergie 13 – Tous droits réservés
-  </footer>
+  <section id="adresse" style="text-align: center; padding: 30px;">
+    <h2>Adresse Smi Froid & Climatisation</h2>
+    <img src="adresse-smi.PNG" alt="Carte SMI Énergie 13 à Pélissanne">
+  </section>
 
-  <button id="backTop" onclick="scrollToTop()">↑</button>
+  <footer>
+    &copy; 2025 SMI Énergie 13
+  </footer>
 
   <script>
     function toggleMenu() {
@@ -240,19 +206,6 @@
         sidebar.style.width = "0";
       }
     });
-
-    window.onscroll = function() {
-      const btn = document.getElementById("backTop");
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        btn.style.display = "block";
-      } else {
-        btn.style.display = "none";
-      }
-    };
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
   </script>
 
 </body>

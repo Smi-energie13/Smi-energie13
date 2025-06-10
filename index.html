@@ -34,7 +34,6 @@
       top: 10px;
     }
 
-    /* Sidebar (menu latéral caché) */
     .sidebar {
       height: 100%;
       width: 0;
@@ -84,7 +83,9 @@
   <!-- Menu latéral -->
   <div id="mySidebar" class="sidebar">
     <a href="index.html">Accueil</a>
-    <a href="prestations.html">Nos prestations</a>
+    <a href="climatisation.html">Climatisation</a>
+    <a href="chauffage.html">Chauffage</a>
+    <a href="isolation.html">Isolation</a>
     <a href="contact.html">Contact</a>
   </div>
 
@@ -119,7 +120,6 @@
     &copy; 2025 SMI Énergie 13
   </footer>
 
-  <!-- Script pour ouvrir/fermer le menu -->
   <script>
     function toggleMenu() {
       const sidebar = document.getElementById("mySidebar");
@@ -130,7 +130,6 @@
       }
     }
 
-    // Ferme le menu si clic en dehors
     document.addEventListener("click", function(event) {
       const sidebar = document.getElementById("mySidebar");
       const menuBtn = document.querySelector(".menu-btn");

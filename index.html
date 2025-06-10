@@ -5,38 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SMI Énergie 13 – Accueil</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      width: 200px;
+      background-color: #004466;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    header, footer {
+      text-align: center;
+      background-color: #e0f0f0;
+      padding: 10px;
+    }
+
+    .services ul {
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>SMI Énergie 13</h1>
-    <p>Solutions innovantes pour l'énergie de demain</p>
-  </header>
 
   <nav>
     <a href="index.html">Accueil</a>
+    <a href="prestations.html">Nos prestations</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <main>
-    <section>
-      <h2>À propos de nous</h2>
-      <p>
-        Basée à Marseille, SMI Énergie 13 accompagne particuliers et entreprises dans leur transition énergétique grâce à des solutions photovoltaïques clés en main.
-      </p>
-    </section>
+  <div style="flex: 1; display: flex; flex-direction: column;">
+    <header>
+      <h1>SMI Énergie 13</h1>
+      <p>Solutions innovantes pour l'énergie de demain</p>
+    </header>
 
-    <section class="services">
-      <h2>Nos services</h2>
-      <ul>
-        <li>Installation de panneaux solaires</li>
-        <li>Études et conseils en efficacité énergétique</li>
-        <li>Maintenance de systèmes photovoltaïques</li>
-      </ul>
-    </section>
-  </main>
+    <main>
+      <section>
+        <h2>À propos de nous</h2>
+        <p>
+          Basée à Marseille, SMI Énergie 13 accompagne particuliers et entreprises dans leur transition énergétique grâce à des solutions photovoltaïques clés en main.
+        </p>
+      </section>
 
-  <footer>
-    &copy; 2025 SMI Énergie 13
-  </footer>
+      <section class="services">
+        <h2>Nos services</h2>
+        <ul>
+          <li>Installation de panneaux solaires</li>
+          <li>Études et conseils en efficacité énergétique</li>
+          <li>Maintenance de systèmes photovoltaïques</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 SMI Énergie 13
+    </footer>
+  </div>
 </body>
 </html>

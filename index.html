@@ -4,36 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SMI Énergie 13 – Accueil</title>
-  <link rel="stylesheet" href="style.css">
   <style>
+    /* Base */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f0f4c3);
+      color: #333;
+      overflow-x: hidden;
     }
 
     header {
-      background-color: #003344;
+      background: linear-gradient(135deg, #003344, #005566);
       color: white;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
       position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    .menu-btn {
-      font-size: 20px;
-      background-color: #003344;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
+    h1 {
+      margin-bottom: 5px;
+      font-size: 2.5em;
+      animation: fadeInDown 1s ease;
     }
 
+    header p {
+      font-size: 1.1em;
+      opacity: 0.8;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    /* Menu bouton */
     .menu-container {
       position: absolute;
       left: 10px;
       top: 10px;
     }
 
+    .menu-btn {
+      font-size: 20px;
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Menu latéral */
     .sidebar {
       height: 100%;
       width: 0;
@@ -48,12 +72,12 @@
     }
 
     .sidebar a {
-      padding: 12px 24px;
+      padding: 15px 30px;
       text-decoration: none;
       font-size: 18px;
       color: white;
       display: block;
-      transition: 0.2s;
+      transition: background 0.3s;
     }
 
     .sidebar a:hover {
@@ -61,20 +85,64 @@
     }
 
     main {
-      padding: 20px;
-      background-color: #f9f9f9;
-      color: #333;
+      padding: 40px 20px;
+      animation: fadeIn 1s ease-in;
     }
 
     section {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: scale(1.01);
+    }
+
+    .services ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    #adresse img {
+      max-width: 90%;
+      height: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    #adresse img:hover {
+      transform: scale(1.02);
     }
 
     footer {
-      background-color: #003344;
+      background: #003344;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
     }
   </style>
 </head>
@@ -89,7 +157,7 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- En-tête avec bouton menu -->
+  <!-- En-tête -->
   <header>
     <div class="menu-container">
       <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
@@ -115,10 +183,11 @@
       </ul>
     </section>
   </main>
-<section id="adresse" style="text-align: center; padding: 30px;">
-  <h2>Adresse Smi Froid & Climatisation</h2>
-  <img src="adresse-smi.PNG" alt="Carte SMI Énergie 13 à Pélissanne" style="max-width: 100%; height: auto; box-shadow: 0 0 10px rgba(0,0,0,0.2); margin-top: 15px;">
-</section>
+
+  <section id="adresse" style="text-align: center; padding: 30px;">
+    <h2>Adresse Smi Froid & Climatisation</h2>
+    <img src="adresse-smi.PNG" alt="Carte SMI Énergie 13 à Pélissanne">
+  </section>
 
   <footer>
     &copy; 2025 SMI Énergie 13
@@ -127,11 +196,7 @@
   <script>
     function toggleMenu() {
       const sidebar = document.getElementById("mySidebar");
-      if (sidebar.style.width === "250px") {
-        sidebar.style.width = "0";
-      } else {
-        sidebar.style.width = "250px";
-      }
+      sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
     }
 
     document.addEventListener("click", function(event) {

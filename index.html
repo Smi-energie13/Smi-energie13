@@ -11,47 +11,21 @@
       font-family: Arial, sans-serif;
     }
 
-    /* MENU LATÉRAL */
-    .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #004466;
-      overflow-x: hidden;
-      transition: 0.3s;
-      padding-top: 60px;
-    }
-
-    .sidebar a {
-      padding: 10px 20px;
-      text-decoration: none;
-      font-size: 18px;
+    header {
+      background-color: #003344;
       color: white;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .sidebar a:hover {
-      background-color: #006080;
+      padding: 20px;
+      text-align: center;
+      position: relative;
     }
 
     .menu-btn {
       font-size: 20px;
-      background-color: #004466;
+      background-color: #003344;
       color: white;
       border: none;
       padding: 10px 15px;
       cursor: pointer;
-    }
-
-    header {
-      background-color: #e0f0f0;
-      padding: 10px;
-      text-align: center;
-      position: relative;
     }
 
     .menu-container {
@@ -60,27 +34,61 @@
       top: 10px;
     }
 
+    /* Sidebar (menu latéral caché) */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background-color: #003344;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.2s;
+    }
+
+    .sidebar a:hover {
+      background-color: #005566;
+    }
+
     main {
       padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    section {
+      margin-bottom: 30px;
     }
 
     footer {
+      background-color: #003344;
+      color: white;
       text-align: center;
-      background-color: #e0f0f0;
       padding: 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- MENU LATÉRAL -->
+  <!-- Menu latéral -->
   <div id="mySidebar" class="sidebar">
     <a href="index.html">Accueil</a>
     <a href="prestations.html">Nos prestations</a>
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- BOUTON MENU -->
+  <!-- En-tête avec bouton menu -->
   <header>
     <div class="menu-container">
       <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
@@ -111,7 +119,7 @@
     &copy; 2025 SMI Énergie 13
   </footer>
 
-  <!-- SCRIPT POUR LE MENU -->
+  <!-- Script pour ouvrir/fermer le menu -->
   <script>
     function toggleMenu() {
       const sidebar = document.getElementById("mySidebar");
@@ -122,7 +130,7 @@
       }
     }
 
-    // Fermer le menu si on clique ailleurs
+    // Ferme le menu si clic en dehors
     document.addEventListener("click", function(event) {
       const sidebar = document.getElementById("mySidebar");
       const menuBtn = document.querySelector(".menu-btn");

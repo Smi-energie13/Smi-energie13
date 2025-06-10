@@ -16,6 +16,32 @@
     main { padding: 20px; background: #f9f9f9; }
     h2 { color: #003344; }
     a { color: #003344; text-decoration: none; }
+
+    /* Menu */
+    #menu-toggle {
+      background-color: #003344;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    #side-menu {
+      background-color: #003344;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    #side-menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 5px 0;
+    }
   </style>
 </head>
 <body>
@@ -23,22 +49,23 @@
     <h1>Climatisation</h1>
     <p>Des solutions efficaces pour un confort optimal</p>
   </header>
-<button id="menu-toggle">☰ Menu</button>
-<nav id="side-menu" style="display:none;">
-  <a href="index.html">Accueil</a>
-  <a href="climatisation.html">Climatisation</a>
-  <a href="chauffage.html">Chauffage</a>
-  <a href="isolation.html">Isolation</a>
-  <a href="contact.html">Contact</a>
-</nav>
 
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('side-menu');
-  toggle.onclick = () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-  };
-</script>
+  <button id="menu-toggle">☰ Menu</button>
+  <nav id="side-menu">
+    <a href="index.html">Accueil</a>
+    <a href="climatisation.html">Climatisation</a>
+    <a href="chauffage.html">Chauffage</a>
+    <a href="isolation.html">Isolation</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('side-menu');
+    toggle.onclick = () => {
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    };
+  </script>
 
   <main>
     <section>
@@ -50,8 +77,6 @@
         <li>Maintenance et dépannage</li>
       </ul>
     </section>
-
-    <p><a href="index.html">← Retour à l'accueil</a></p>
   </main>
 
   <footer>

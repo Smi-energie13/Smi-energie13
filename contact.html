@@ -131,7 +131,20 @@
       </div>
     </section>
   </main>
+ <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.style.width = (sidebar.style.width === "250px") ? "0" : "250px";
+    }
 
+    document.addEventListener("click", function(event) {
+      const sidebar = document.getElementById("mySidebar");
+      const menuBtn = document.querySelector(".menu-btn");
+      if (!sidebar.contains(event.target) && !menuBtn.contains(event.target)) {
+        sidebar.style.width = "0";
+      }
+    });
+  </script>
   <footer>
     &copy; 2025 SMI Énergie 13 – Tous droits réservés
   </footer>

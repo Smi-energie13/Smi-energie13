@@ -23,6 +23,22 @@
     <h1>Isolation</h1>
     <p>Une maison bien isolée, c'est moins de pertes d'énergie</p>
   </header>
+<button id="menu-toggle">☰ Menu</button>
+<nav id="side-menu" style="display:none;">
+  <a href="index.html">Accueil</a>
+  <a href="climatisation.html">Climatisation</a>
+  <a href="chauffage.html">Chauffage</a>
+  <a href="isolation.html">Isolation</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('side-menu');
+  toggle.onclick = () => {
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  };
+</script>
 
   <main>
     <section>

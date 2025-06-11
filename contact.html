@@ -1,137 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact – SMI Énergie 13</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    function afficherConfirmation() {
-      const form = document.getElementById("contact-form");
-      const confirmation = document.getElementById("confirmation");
-      form.style.display = "none";
-      confirmation.style.display = "block";
-    }
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+      color: #2e2e2e;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     header {
-      background-color: #003344;
+      background: linear-gradient(135deg, #004d40, #00695c);
       color: white;
-      padding: 20px;
+      padding: 60px 20px 40px;
       text-align: center;
       position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
-    .menu-btn {
-      font-size: 20px;
-      background-color: #003344;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
+    h1 {
+      margin: 0;
+      font-size: 2.8em;
+      font-weight: 700;
+      animation: fadeInDown 1s ease;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+      animation: fadeInDown 1.3s ease;
     }
 
     .menu-container {
       position: absolute;
-      left: 10px;
-      top: 10px;
+      left: 15px;
+      top: 15px;
+    }
+
+    .menu-btn {
+      font-size: 18px;
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
     }
 
     .sidebar {
       height: 100%;
       width: 0;
       position: fixed;
-      z-index: 2;
+      z-index: 5;
       top: 0;
       left: 0;
-      background-color: #003344;
+      background: #004d40;
       overflow-x: hidden;
-      transition: 0.3s;
+      transition: 0.4s;
       padding-top: 60px;
     }
 
     .sidebar a {
-      padding: 12px 24px;
+      display: block;
+      color: white;
+      padding: 16px 32px;
       text-decoration: none;
       font-size: 18px;
-      color: white;
-      display: block;
-      transition: 0.2s;
+      transition: background 0.3s;
     }
 
     .sidebar a:hover {
-      background-color: #005566;
+      background: #00695c;
     }
 
     main {
-      padding: 20px;
-      background-color: #f9f9f9;
-      color: #333;
+      padding: 50px 20px;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    form {
+      background: white;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    form label {
+      font-weight: 500;
+    }
+
+    form input,
+    form textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    form button {
+      background: #00695c;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #004d40;
+    }
+
+    #confirmation {
+      background: white;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+
+    #confirmation h2 {
+      color: #00695c;
     }
 
     footer {
-      background-color: #003344;
+      background: #004d40;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      form, #confirmation { margin: 20px; }
     }
   </style>
-</head>
-<body>
-
-  <div id="mySidebar" class="sidebar">
-    <a href="index.html">Accueil</a>
-    <a href="climatisation.html">Climatisation</a>
-    <a href="chauffage.html">Chauffage</a>
-    <a href="isolation.html">Isolation</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</head>
-<body>
-  <header>
-    
-    <div class="menu-container">
-      <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
-    </div>
-      
-    <h1>Contactez-nous</h1>
-    <p>Besoin d’un devis ou d’informations ? Écrivez-nous !</p>
-  </header>
-
-  <main>
-    <section class="formulaire">
-      <form id="contact-form" action="https://formspree.io/f/mkgrlbrw" method="POST" onsubmit="afficherConfirmation(); return true;">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
-
-        <label for="email">Adresse email :</label>
-        <input type="email" id="email" name="_replyto" required>
-
-         <label for="numero">Numéro de téléphone :</label>
-        <input type="numero" id="numero" name="_replyto" required>
-
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
-
-      <div id="confirmation" style="display: none; text-align: center; padding: 20px;">
-        <h2>Merci pour votre message !</h2>
-        <p>Nous vous répondrons rapidement.</p>
-        <a href="index.html">
-          <button style="margin-top: 20px;">Retour à l'accueil</button>
-        </a>
-      </div>
-    </section>
-  </main>
- <script>
+  <script>
     function toggleMenu() {
       const sidebar = document.getElementById("mySidebar");
       sidebar.style.width = (sidebar.style.width === "250px") ? "0" : "250px";
@@ -144,7 +180,59 @@
         sidebar.style.width = "0";
       }
     });
+
+    function afficherConfirmation() {
+      const form = document.getElementById("contact-form");
+      const confirmation = document.getElementById("confirmation");
+      form.style.display = "none";
+      confirmation.style.display = "block";
+    }
   </script>
+</head>
+<body>
+
+  <div id="mySidebar" class="sidebar">
+    <a href="index.html">Accueil</a>
+    <a href="climatisation.html">Climatisation</a>
+    <a href="chauffage.html">Chauffage</a>
+    <a href="isolation.html">Isolation</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <header>
+    <div class="menu-container">
+      <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    </div>
+    <h1>Contactez-nous</h1>
+    <p>Besoin d’un devis ou d’informations ? Écrivez-nous !</p>
+  </header>
+
+  <main>
+    <form id="contact-form" action="https://formspree.io/f/mkgrlbrw" method="POST" onsubmit="afficherConfirmation(); return true;">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="email">Adresse email :</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="numero">Numéro de téléphone :</label>
+      <input type="text" id="numero" name="numero" required>
+
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <div id="confirmation" style="display: none;">
+      <h2>Merci pour votre message !</h2>
+      <p>Nous vous répondrons rapidement.</p>
+      <a href="index.html">
+        <button style="margin-top: 20px;">Retour à l'accueil</button>
+      </a>
+    </div>
+  </main>
+
   <footer>
     &copy; 2025 SMI Énergie 13 – Tous droits réservés
   </footer>

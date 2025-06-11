@@ -1,76 +1,158 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Isolation – SMI Énergie 13</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chauffage – SMI Énergie 13</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+      color: #2e2e2e;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     header {
-      background-color: #003344;
+      background: linear-gradient(135deg, #004d40, #00695c);
       color: white;
-      padding: 20px;
+      padding: 60px 20px 40px;
       text-align: center;
       position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
-    .menu-btn {
-      font-size: 20px;
-      background-color: #003344;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
+    h1 {
+      margin: 0;
+      font-size: 2.8em;
+      font-weight: 700;
+      animation: fadeInDown 1s ease;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+      animation: fadeInDown 1.3s ease;
     }
 
     .menu-container {
       position: absolute;
-      left: 10px;
-      top: 10px;
+      left: 15px;
+      top: 15px;
+    }
+
+    .menu-btn {
+      font-size: 18px;
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
     }
 
     .sidebar {
       height: 100%;
       width: 0;
       position: fixed;
-      z-index: 2;
+      z-index: 5;
       top: 0;
       left: 0;
-      background-color: #003344;
+      background: #004d40;
       overflow-x: hidden;
-      transition: 0.3s;
+      transition: 0.4s;
       padding-top: 60px;
     }
 
     .sidebar a {
-      padding: 12px 24px;
+      display: block;
+      color: white;
+      padding: 16px 32px;
       text-decoration: none;
       font-size: 18px;
-      color: white;
-      display: block;
-      transition: 0.2s;
+      transition: background 0.3s;
     }
 
     .sidebar a:hover {
-      background-color: #005566;
+      background: #00695c;
     }
 
     main {
-      padding: 20px;
-      background-color: #f9f9f9;
-      color: #333;
+      padding: 50px 20px;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    section {
+      background: white;
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0,150,136,0.2);
+    }
+
+    section h2 {
+      color: #00695c;
+      font-weight: 600;
     }
 
     footer {
-      background-color: #003344;
+      background: #004d40;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #backTop {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #00695c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    #backTop:hover {
+      background: #004d40;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      section { margin: 20px; }
     }
   </style>
 </head>
@@ -88,32 +170,40 @@
     <div class="menu-container">
       <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
     </div>
-    <h1>Isolation</h1>
-    <p>Améliorez l'efficacité énergétique de votre habitat</p>
+    <h1>Chauffage</h1>
+    <p>Chaleur maîtrisée pour un confort optimal</p>
   </header>
 
   <main>
     <section>
-      <h2>Nos prestations d'isolation</h2>
+      <h2>Nos solutions de chauffage</h2>
       <p>
-        SMI Énergie 13 vous accompagne dans l’amélioration thermique de votre logement grâce à des techniques d’isolation performantes.
-      </p>
+ SMI Énergie 13 installe des systèmes de chauffage modernes, économiques et adaptés à votre habitat pour garantir un confort thermique tout l’hiver.      </p>
       <ul>
-        <li>Isolation des combles perdus ou aménageables</li>
-        <li>Isolation des murs par l'intérieur ou l'extérieur</li>
-        <li>Solutions respectueuses de l’environnement</li>
+      <li>Pompes à chaleur air/eau</li>
+        <li>Chaudières haute performance</li>
+        <li>Conseils personnalisés et installation complète</li>
       </ul>
+    </section>
+
+    <section>
+      <h2>Pourquoi choisir SMI Énergie 13 ?</h2>
+      <p>
+        Nous mettons l’accent sur la qualité de service, l’accompagnement client et l’expertise technique. Nos techniciens sont formés aux dernières normes et vous assurent une installation durable et éco-performante.
+      </p>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 SMI Énergie 13
+    &copy; 2025 SMI Énergie 13 – Tous droits réservés
   </footer>
+
+  <button id="backTop" onclick="scrollToTop()">↑</button>
 
   <script>
     function toggleMenu() {
       const sidebar = document.getElementById("mySidebar");
-      sidebar.style.width = (sidebar.style.width === "250px") ? "0" : "250px";
+      sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
     }
 
     document.addEventListener("click", function(event) {
@@ -123,7 +213,21 @@
         sidebar.style.width = "0";
       }
     });
+
+    window.onscroll = function() {
+      const btn = document.getElementById("backTop");
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   </script>
 
 </body>
 </html>
+
